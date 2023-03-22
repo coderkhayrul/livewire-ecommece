@@ -1,0 +1,18 @@
+@mixin flex-space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin links{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+    padding: 1rem .5rem;
+    font-size: 1.2rem;
+    &:hover{
+        background-color: #fff;
+        color: $primary-color;
+        font-size: 1.4rem;
+        padding: .8rem .5rem;
+    }
+}

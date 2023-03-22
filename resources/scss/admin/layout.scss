@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import "base-style";
+
+//Variable Declaration
+$primary-color: #0fac82;
+$secondary-color: #e2f4f0;
+$sidebar-color: #14489e;
+$btn-color: #202120;
+$horizontal-nav-height: 17vh;
+$vertical-nav-width: 20vw;
+
+*, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: $secondary-color;
+}
+.horizontal-nav{
+    background-color: $primary-color;
+    @include flex-space-between;
+    padding: 0 2rem;
+    height: $horizontal-nav-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    .right-nav{
+        width: 15vw;
+        @include flex-space-between;
+        *{  display: inline-block; }
+    }
+}
+.admin{
+    position: absolute;
+    top: 12vh;
+    left: 21vw;
+    text-transform: capitalize;
+    color: $btn-color;
+}
+.vartical-nav{
+    position: fixed;
+    top: $horizontal-nav-height;
+    left: 0;
+    width: $vertical-nav-width;
+    height: calc(100vh - $horizontal-nav-height);
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    a{
+        @include links;
+    }
+}
+.content{
+    position: absolute;
+    top: $horizontal-nav-height;
+    left: $vertical-nav-width;
+    right: 0;
+    min-height: calc(100vh - $horizontal-nav-height);
+    background-color: #ca4c08;
+}
